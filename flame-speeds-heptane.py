@@ -42,7 +42,7 @@ gas.TP = (temperature,pressure)
 gas()
 
 
-# In[36]:
+# In[5]:
 
 def extrapolate_uncertainty(grids, speeds):
     """
@@ -192,12 +192,12 @@ loglevel = 1
 flame.solve(loglevel=loglevel, auto=True)
 
 
-# In[43]:
+# In[9]:
 
 final_true_speed, percentage_uncertainty = extrapolate_uncertainty(grids, speeds)
 
 
-# In[25]:
+# In[10]:
 
 print("Final grid was size {}".format(grids[-1]))
 print("Final speed was {:.4f} cm/s".format(100*speeds[-1]))
@@ -206,7 +206,7 @@ print("i.e. {:.3f} +/- {:.3f} cm/s".format(100*speeds[-1],
                                            percentage_uncertainty*speeds[-1]))
 
 
-# In[46]:
+# In[11]:
 
 for i in range(4,len(grids)):
     print("At step {}".format(i))
@@ -224,7 +224,7 @@ for i in range(4,len(grids)):
 
 # And plot some figures just to check things look sensible.
 
-# In[47]:
+# In[12]:
 
 plt.figure()
 plt.plot(flame.grid*100, flame.T, '-o')
@@ -232,7 +232,7 @@ plt.xlabel('Distance (cm)')
 plt.ylabel('Temperature (K)');
 
 
-# In[50]:
+# In[13]:
 
 # look up species indices
 i_fuel = gas.species_index(fuel)
